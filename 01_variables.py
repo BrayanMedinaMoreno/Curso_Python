@@ -31,8 +31,32 @@ print(type(edad))
 # Algunas funciones del sistema len()
 print (len(my_string_variable))
 
-minion = ""
+# inputs
+"""
+first_name = input ("¿What is your name?")
+edad = input("¿how old are you?")
+print (first_name)
+print (edad)
 
+name = input("¿cual es tu nombre?")
+age = input ("¿cuantos años tienes?")
+print(name)
+print(age)
+"""
+
+# Cambiamos su tipo
+
+nombre = 23
+edad = "brayan"
+print(nombre)
+print(edad)
+
+# ¿forzamos el tipo? ¿tipado debil?
+
+address: str = "mi direccion"
+andress = 32
+print(type(andress))
+print("end")
 
 
 
