@@ -17,6 +17,21 @@ print(" Hola " * int(my_float))
 
 ### Operadores Comparativos ###
 
-print (3 > 4)
-print (3 < 4)
-print ( <=)
+print(3 > 4)
+print(3 < 4)
+print(3 <= 4)
+print(3 >= 4)
+print(3 == 4)
+print(3 != 4)
+
+print("Hola" > "python")
+print("Hola" < "python")
+print("aaaa" <= "AAAA")
+
+### Operadores logicos ###
+
+print (3 > 4 and "Hola" > "python")
+print (3 > 4 or "Hola" > "python")
+print ( 3 < 4 and "Hola" < "python")
+print ( 3 < 4 or "Hola" > "python")
+print (not(3 > 4 )) # negar
