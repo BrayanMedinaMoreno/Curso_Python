@@ -20,7 +20,7 @@ def getProducts():
 
 @app.route("/products/<string:product_name>") # :product_name
 def getProduct(product_name):
-    productsFound =[product for product in products if product["name"] == product_name]    #recorre la lista de productos y la compara para retornar
+    productsFound = [product for product in products if product["name"] == product_name]    #recorre la lista de productos y la compara para retornar
     if (len(productsFound)>0):
         return jsonify ({"product": productsFound[0]})
     return jsonify ({"message": "Product not found"})
@@ -37,4 +37,3 @@ if __name__ == "__main__":
     
 #20:30
 
-    
