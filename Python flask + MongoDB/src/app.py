@@ -9,7 +9,7 @@ mongo = PyMongo(app)
 #Home#
 
 @app.route("/", methods=["GET"])
-def create_Home():
+def create_Home(): 
     return "received" 
 
 
@@ -22,7 +22,7 @@ def create_User():
     email = request.json["email"]
     if username and email and password:
         hashed_password = generate_password_hash(password)
-        id = mongo.db.users.insertOne(
+        id = mongo.db.users.insert_one(
             {"username": username,"email": email,"password": hashed_password}
         )
         response = {
