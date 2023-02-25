@@ -20,6 +20,8 @@ def create_User():
     username = request.json["username"]
     password = request.json["password"]
     email = request.json["email"]
+    if mongo.db.users.find({"email" : email}) : 
+        return {"message": "user alredy exists"}
     if username and email and password:
         hashed_password = generate_password_hash(password)
         id = mongo.db.users.insert_one(
