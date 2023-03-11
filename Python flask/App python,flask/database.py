@@ -1,13 +1,12 @@
 from pymongo import MongoClient
-import certifi
 
-MONGO_URI = "mongodb+srv://Akari:<ConquerorEnJoyer>@xd.kvv8olg.mongodb.net/?retryWrites=true&w=majority"
-ca = certifi.where()
+#MONGO_URI = "pymongo.MongoClient("mongodb+srv://<username>:<password>@cluster0.kzfpgmi.mongodb.net/?retryWrites=true&w=majority")"
+MONGO_URI = "mongodb://localhost:27017"
 
 def dbConnection():
     try:
-        cliente = MongoClient.connect(MONGO_URI, tlsCAFile=ca)
-        db = cliente["XD"]
+        cliente = MongoClient(MONGO_URI)
+        db = cliente.XD
     except ConnectionError:
         print("error de conexion con la bdd")
     return db       

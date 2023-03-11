@@ -9,7 +9,9 @@ app = Flask(__name__)
 # rutas de la app
 @app.route("/")
 def home ():
-    return render_template("index.html")
+    products = db["products"]
+    productsReceived = list(products.find())
+    return render_template("index.html", products = productsReceived)
 
 #method post
 @app.route("/products", methods=["POST"])
@@ -49,7 +51,9 @@ def edit(product_name):
     if name and price and quantity:
         products.update_one({"name" : product_name}, {"$set" : {"name" : name, "price" : price, "quantity" : quantity}})
         response = jsonify({"message" : "Producto" + product_name + "actualizado correctamente"})
-        return
+        return redirect(url_for("home"))
+    else:
+        return notFound()
     
 @app.errorhandler(404)
 def notFound(error=None):
