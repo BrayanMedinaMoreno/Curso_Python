@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+#import certifi 
 
 #MONGO_URI = "pymongo.MongoClient("mongodb+srv://<username>:<password>@cluster0.kzfpgmi.mongodb.net/?retryWrites=true&w=majority")"
 MONGO_URI = "mongodb://localhost:27017"
