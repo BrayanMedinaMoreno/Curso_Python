@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from function_jwt import write_token
+from function_jwt import write_token, valida_token
 
 
 routes_auth = Blueprint("routes_auth", __name__)
@@ -13,3 +13,10 @@ def login():
         response = jsonify({"message" : "User not found"})
         response.status_code = 404
         return response
+
+@routes_auth.route("/verify/token")
+def verify():
+    token = request.headers["Authorization"].split(" ")[1]
+    return valida_token (token, output=True)
+    
+    
