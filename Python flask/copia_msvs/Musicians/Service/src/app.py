@@ -70,6 +70,7 @@ def uploadProfile(claims):
         return jsonify(err)
 
 # Route para subir videos
+print("XD")
 @app.route("/musician/uploadVideo", methods=["POST"])
 @token_required
 def uploadMusician(claims):
@@ -114,6 +115,7 @@ def uploadMusician(claims):
         return jsonify(err)
 
 ### GETALL ###
+print("XD")
 @app.route("/musician/all", methods=["GET"])
 def getAllmusician():
     db = Database.dbConnection()
@@ -133,6 +135,7 @@ def getMusician(claims):
 
 
 ### POST ###
+print("XD")
 @app.route("/musician", methods=["POST"])
 @token_required
 def postInfomusician(claims):
@@ -182,6 +185,7 @@ def postInfomusician(claims):
 
 
 ### DELETE ###
+print("XD")
 @app.route("/musician", methods=["DELETE"])
 @token_required
 def deleteMusician(claims):
@@ -197,6 +201,7 @@ def deleteMusician(claims):
 
 
 ### PUT ###
+print("XD")
 @app.route("/musician", methods=["PUT"])
 @token_required
 def putMusician (claims):
@@ -252,9 +257,9 @@ def not_Found(error=None):
         "status": 404
     })
 
+print("XD")
 
+if __name__ =="__main__":  
+   app.run(debug = True, port=5000)
 
-# if __name__ =="__main__":  
-#     app.run(debug = True, port=5000)
-
-### Cuando moises me mando hacer un micro servicio no tenia ni la menor idea de como iniciar pero tuve fe y ayuda de moises XD ###
+### Cuando moises me mando hacer un micro servicio no tenia ni la menor idea de como iniciar  ###
